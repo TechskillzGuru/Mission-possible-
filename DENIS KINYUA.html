@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>User Registration Form</h1>
+    <p>Please complete all required fields to register.</p>
+
+    <form id="registrationForm" method="post" action="/submit">
+        <fieldset>
+            <legend>Basic Information</legend>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" 
+                   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" 
+                   title="Must contain at least one uppercase letter, one lowercase letter, one digit, and be at least 8 characters long" 
+                   required>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Account Details</legend>
+
+            <label>Account Type:</label>
+            <input type="radio" id="personal" name="accountType" value="personal" required>
+            <label for="personal">Personal Account</label>
+            <input type="radio" id="business" name="accountType" value="business">
+            <label for="business">Business Account</label>
+            <br>
+
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                I accept the <a href="/terms">Terms and Conditions</a>
+            </label>
+            <br>
+
+            <label for="profilePic">Profile Picture:</label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*">
+            <br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" max="120" required>
+            <br>
+
+            <label for="referrer">How did you find us?</label>
+            <select id="referrer" name="referrer">
+                <option value="friend">Friend</option>
+                <option value="onlineSearch">Online Search</option>
+                <option value="socialMedia">Social Media</option>
+            </select>
+            <br>
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Tell us about yourself..."></textarea>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br>
+
+            <label>Interests:</label>
+            <input type="checkbox" id="coding" name="interests" value="coding">
+            <label for="coding">Coding</label>
+            <input type="checkbox" id="design" name="interests" value="design">
+            <label for="design">Design</label>
+            <input type="checkbox" id="reading" name="interests" value="reading">
+            <label for="reading">Reading</label>
+            <br>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <optgroup label="East Africa">
+                    <option value="kenya">Kenya</option>
+                    <option value="uganda">Uganda</option>
+                    <option value="tanzania">Tanzania</option>
+                    <option value="ethiopia">Ethiopia</option>
+                </optgroup>
+                <optgroup label="North Africa">
+                    <option value="egypt">Egypt</option>
+                    <option value="morocco">Morocco</option>
+                    <option value="algeria">Algeria</option>
+                    <option value="tunisia">Tunisia</option>
+                </optgroup>
+                <optgroup label="West Africa">
+                    <option value="nigeria">Nigeria</option>
+                    <option value="ghana">Ghana</option>
+                    <option value="senegal">Senegal</option>
+                    <option value="ivoryCoast">Ivory Coast</option>
+                </optgroup>
+                <optgroup label="Southern Africa">
+                    <option value="southAfrica">South Africa</option>
+                    <option value="zimbabwe">Zimbabwe</option>
+                    <option value="botswana">Botswana</option>
+                    <option value="namibia">Namibia</option>
+                </optgroup>
+            </select>
+            <br>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
